@@ -54,7 +54,10 @@ namespace MVCMongo.Models
                     MCollection.Insert(doc);
 
             }
-            catch { }
+            catch (MongoException me)
+            {
+                throw new MongoException(me.Message);
+            }
         }
         public void EditDepartment(Department collection)
         {
