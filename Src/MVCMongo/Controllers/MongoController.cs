@@ -50,9 +50,9 @@ namespace MVCMongo.Controllers
                 db.CreateDepartment(dept);
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                throw ex;
             }
         }
 
